@@ -1,0 +1,5 @@
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\bin\Debug\CadWeb.Dominio.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\bin\Debug\CadWeb.Dominio.pdb
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Debug\CadWeb.Dominio.csprojResolveAssemblyReference.cache
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Debug\CadWeb.Dominio.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Debug\CadWeb.Dominio.pdb
