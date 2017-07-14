@@ -3,3 +3,4 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\bin\Release
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\bin\Release\CadWeb.Dominio.pdb
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Release\CadWeb.Dominio.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Release\CadWeb.Dominio.pdb
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dominio\obj\Release\CadWeb.Dominio.csprojResolveAssemblyReference.cache
