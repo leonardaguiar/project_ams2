@@ -1,0 +1,12 @@
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\CadWeb.Dados.dll.config
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\CadWeb.Dados.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\CadWeb.Dados.pdb
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\CadWeb.Dominio.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\EntityFramework.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\EntityFramework.SqlServer.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\CadWeb.Dominio.pdb
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\EntityFramework.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\bin\Release\EntityFramework.SqlServer.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\obj\Release\CadWeb.Dados.csprojResolveAssemblyReference.cache
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\obj\Release\CadWeb.Dados.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.Dados\obj\Release\CadWeb.Dados.pdb

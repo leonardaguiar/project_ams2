@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CadWeb.Dados.Mappings
 {
-   public class UsuarioMap : EntityTypeConfiguration<Usuario>
+    public class UsuarioMap : EntityTypeConfiguration<Usuario>
     {
         public UsuarioMap()
         {
@@ -17,6 +17,5 @@ namespace CadWeb.Dados.Mappings
             Property(x => x.Nome).HasMaxLength(200).IsRequired();
             Property(x => x.Senha).IsRequired();
         }
-
     }
 }
