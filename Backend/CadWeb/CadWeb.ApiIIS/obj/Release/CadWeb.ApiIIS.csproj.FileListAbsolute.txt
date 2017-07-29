@@ -22,6 +22,7 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsof
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.AspNet.Identity.Owin.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Cors.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Host.SystemWeb.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Security.Cookies.dll
@@ -35,7 +36,9 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsof
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Newtonsoft.Json.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Owin.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Net.Http.Formatting.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Cors.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Helpers.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.Cors.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.Owin.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.WebHost.dll
@@ -49,6 +52,9 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\WebGreas
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\CadWeb.Dados.pdb
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\CadWeb.Dominio.pdb
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Cors.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.Cors.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Newtonsoft.Json.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Net.Http.Formatting.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Helpers.xml
@@ -66,7 +72,6 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\EntityFr
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.AspNet.Identity.Core.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.AspNet.Identity.Owin.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Host.SystemWeb.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Security.xml
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Security.Facebook.xml

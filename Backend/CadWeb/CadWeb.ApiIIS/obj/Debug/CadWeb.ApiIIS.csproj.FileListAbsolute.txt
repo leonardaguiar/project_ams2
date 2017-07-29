@@ -79,3 +79,8 @@ E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.W
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\obj\Debug\CadWeb.ApiIIS.csprojResolveAssemblyReference.cache
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\obj\Debug\CadWeb.ApiIIS.dll
 E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\obj\Debug\CadWeb.ApiIIS.pdb
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Cors.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Cors.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\Microsoft.Owin.Cors.xml
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.Cors.dll
+E:\Meus documentos\GitHub\project_ams2\Backend\CadWeb\CadWeb.ApiIIS\bin\System.Web.Http.Cors.xml

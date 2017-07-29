@@ -18,15 +18,15 @@ namespace CadWeb.ApiIIS
             //config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
             //
 
-            var formatters = GlobalConfiguration.Configuration.Formatters;
-            var jsonFormatter = formatters.JsonFormatter;
-            var settings = jsonFormatter.SerializerSettings;
+            //var formatters = GlobalConfiguration.Configuration.Formatters;
+            //var jsonFormatter = formatters.JsonFormatter;
+            //var settings = jsonFormatter.SerializerSettings;
 
-            jsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
-            settings.Formatting = Newtonsoft.Json.Formatting.Indented;
-            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-           
+            //jsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
+            //config.Formatters.Remove(config.Formatters.XmlFormatter);
+            //settings.Formatting = Newtonsoft.Json.Formatting.Indented;
+            //settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            //config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();
