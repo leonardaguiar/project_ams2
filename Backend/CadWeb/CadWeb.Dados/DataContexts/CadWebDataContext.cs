@@ -12,14 +12,22 @@ namespace CadWeb.Dados.DataContexts
             //Database.Connection.ConnectionString = "Data Source=LEO-PC\\EXPERT;Initial Catalog=cadweb;Integrated Security=True;";
             Database.Connection.ConnectionString = "Data Source=gohorse2.chfx4nncv5vw.us-west-2.rds.amazonaws.com;Initial Catalog=cadweb;User ID=root;Password=11072017;";
             //Database.Connection.ConnectionString = "Data Source=localhost\\Expert;Initial Catalog=cadweb;User ID=sa;Password=gehmni;";
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
             Database.SetInitializer<CadWebDataContext>(new CadWebDataContextsInitializer());
         }
        public IDbSet<Usuario> Usuarios { get; set; }
        public IDbSet<Setor> Setor { get; set; }
        public IDbSet<Discente> Discente { get; set; }
        public IDbSet<Docente> Docente { get; set; }
+       public IDbSet<Projeto> Projeto { get; set; }
+       public IDbSet<TarefaProjeto> TarefasProjeto { get; set; }
+       public IDbSet<AtividadeProjeto> AtividadesProjeto { get; set; }
+       public IDbSet<ParticipanteProjeto> ParticipantesProjeto  { get; set; }
+       public IDbSet<ParticipanteAtividadeProjeto> ParticipantesAtividadeProjeto { get; set; }
+       public IDbSet<ParticipanteTarefaProjeto> ParticipantesTarefaProjeto { get; set; }
+       public IDbSet<SemestreProjeto> SemestresProjeto { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,6 +35,13 @@ namespace CadWeb.Dados.DataContexts
             modelBuilder.Configurations.Add(new SetorMap());
             modelBuilder.Configurations.Add(new DocenteMap());
             modelBuilder.Configurations.Add(new DiscenteMap());
+            modelBuilder.Configurations.Add(new ProjetoMap());
+            modelBuilder.Configurations.Add(new TarefaProjetoMap());
+            modelBuilder.Configurations.Add(new AtividadeProjetoMap());
+            modelBuilder.Configurations.Add(new ParticipanteProjetoMap());
+            modelBuilder.Configurations.Add(new ParticipanteTarefaProjetoMap());
+            modelBuilder.Configurations.Add(new ParticipanteAtividadeProjetoMap());
+            modelBuilder.Configurations.Add(new SemestreProjetoMap());
             base.OnModelCreating(modelBuilder);
         }
     }

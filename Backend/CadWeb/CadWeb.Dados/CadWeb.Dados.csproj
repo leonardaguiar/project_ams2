@@ -50,9 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContexts\CadWebDataContext.cs" />
+    <Compile Include="Mappings\AtividadeProjetoMap.cs" />
     <Compile Include="Mappings\DiscenteMap.cs" />
     <Compile Include="Mappings\DocenteMap.cs" />
+    <Compile Include="Mappings\ParticipanteAtividadeProjetoMap.cs" />
+    <Compile Include="Mappings\ParticipanteProjetoMap.cs" />
+    <Compile Include="Mappings\ParticipanteTarefaProjetoMap.cs" />
+    <Compile Include="Mappings\ProjetoMap.cs" />
+    <Compile Include="Mappings\SemestreProjetoMap.cs" />
     <Compile Include="Mappings\SetorMap.cs" />
+    <Compile Include="Mappings\TarefaProjetoMap.cs" />
     <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
