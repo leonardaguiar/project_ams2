@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnexoProjeto.cs" />
     <Compile Include="AtividadeProjeto.cs" />
     <Compile Include="AtividadeProjetoView.cs" />
     <Compile Include="Class1.cs" />

@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContexts\CadWebDataContext.cs" />
+    <Compile Include="Mappings\AnexoProjetoMap.cs" />
     <Compile Include="Mappings\AtividadeProjetoMap.cs" />
     <Compile Include="Mappings\DiscenteMap.cs" />
     <Compile Include="Mappings\DocenteMap.cs" />

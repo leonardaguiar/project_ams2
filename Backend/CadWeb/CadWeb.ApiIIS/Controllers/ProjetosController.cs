@@ -103,9 +103,12 @@ namespace CadWeb.ApiIIS.Controllers
                                 where prtp.ProjetoId == id
                                 select new
                                 {
+                                   
                                     prtp.Comissao, 
                                     prtp.Coordenador,
+                                    prtp.Discente,
                                     prtp.DiscenteId,
+                                    prtp.Docente,
                                     prtp.DocenteId,
                                     prtp.Id,
                                     prtp.ProjetoId,
@@ -124,6 +127,8 @@ namespace CadWeb.ApiIIS.Controllers
                     participante.Id = prtp.Id;
                     participante.ProjetoId = prtp.ProjetoId;
                     participante.TipoParticipante = prtp.TipoParticipante;
+                    participante.Docente = prtp.Docente;
+                    participante.Discente = prtp.Discente;
 
                     projetoview.ParticipantesProjeto.Add(participante);
                 }
@@ -265,7 +270,7 @@ namespace CadWeb.ApiIIS.Controllers
 
                 db.Entry<Projeto>(projeto).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                //usuario.Senha = encrypt.Encryptword(usuario.Senha);
+                
                 var result = projeto;
                 return Request.CreateResponse(HttpStatusCode.OK, "Projeto alterado com sucesso");
 

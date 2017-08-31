@@ -9,6 +9,7 @@ using Microsoft.Owin.Security.OAuth;
 using OAuthServer.Api.Security;
 using Newtonsoft.Json;
 using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 
 [assembly: OwinStartup(typeof(CadWeb.ApiIIS.Startup))]
 
@@ -41,10 +42,10 @@ namespace CadWeb.ApiIIS
             var jsonFormatter = formatters.JsonFormatter;
             var settings = jsonFormatter.SerializerSettings;
 
-            jsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.None;
+            jsonFormatter.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             settings.Formatting = Newtonsoft.Json.Formatting.Indented;
-
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/octet-stream"));
             var singlejsonFormatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             singlejsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 

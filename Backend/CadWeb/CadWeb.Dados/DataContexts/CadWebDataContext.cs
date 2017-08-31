@@ -13,8 +13,8 @@ namespace CadWeb.Dados.DataContexts
             Database.Connection.ConnectionString = "Data Source=gohorse2.chfx4nncv5vw.us-west-2.rds.amazonaws.com;Initial Catalog=cadweb;User ID=root;Password=11072017;";
             //Database.Connection.ConnectionString = "Data Source=localhost\\Expert;Initial Catalog=cadweb;User ID=sa;Password=gehmni;";
             this.Configuration.LazyLoadingEnabled = true;
-            this.Configuration.ProxyCreationEnabled = true;
-            Database.SetInitializer<CadWebDataContext>(new CadWebDataContextsInitializer());
+            this.Configuration.ProxyCreationEnabled = false;
+            //Database.SetInitializer<CadWebDataContext>(new CadWebDataContextsInitializer());
         }
        public IDbSet<Usuario> Usuarios { get; set; }
        public IDbSet<Setor> Setor { get; set; }
@@ -27,6 +27,7 @@ namespace CadWeb.Dados.DataContexts
        public IDbSet<ParticipanteAtividadeProjeto> ParticipantesAtividadeProjeto { get; set; }
        public IDbSet<ParticipanteTarefaProjeto> ParticipantesTarefaProjeto { get; set; }
        public IDbSet<SemestreProjeto> SemestresProjeto { get; set; }
+       public IDbSet<AnexoProjeto> AnexosProjeto { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

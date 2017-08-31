@@ -106,7 +106,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         [Authorize()]
         [HttpDelete]
-        [Route("semestresprojeto")]
+        [Route("semestresprojeto/{id:int}")]
         public HttpResponseMessage Delete(int id)
         {
             if (id <= 0)

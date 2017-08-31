@@ -188,10 +188,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AnexosProjetoController.cs" />
     <Compile Include="Controllers\AtividadesController.cs" />
     <Compile Include="Controllers\DiscentesController.cs" />
     <Compile Include="Controllers\DocentesController.cs" />
-    <Compile Include="Controllers\ParticipanteAtividadeController.cs" />
+    <Compile Include="Controllers\ParticipantesAtividadeController.cs" />
     <Compile Include="Controllers\ParticipantesProjetoController.cs" />
     <Compile Include="Controllers\ParticipantesTarefaController.cs" />
     <Compile Include="Controllers\ProjetosController.cs" />
@@ -224,7 +225,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\Upload\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

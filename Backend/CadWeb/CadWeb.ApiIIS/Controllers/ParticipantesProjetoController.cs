@@ -25,14 +25,47 @@ namespace CadWeb.ApiIIS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        [Authorize()]
+        //[Authorize()]
         [Route("participantesprojeto/{id:int}")]
         public HttpResponseMessage GetParticipanteProjetoById(int id)
         {
             
-            var results = db.ParticipantesProjeto.Where(x => x.Id == id);
-           
-            return Request.CreateResponse(HttpStatusCode.OK, results);
+            //var results = db.ParticipantesProjeto.Where(x => x.Id == id).ToList();
+            var participantes = from prtp in db.ParticipantesProjeto
+                                where prtp.Id == id
+                                select new
+                                {
+
+                                    prtp.Comissao,
+                                    prtp.Coordenador,
+                                    prtp.Discente,
+                                    prtp.DiscenteId,
+                                    prtp.Docente,
+                                    prtp.DocenteId,
+                                    prtp.Id,
+                                    prtp.ProjetoId,
+                                    prtp.TipoParticipante
+                                };
+
+            ParticipanteProjeto participante= new ParticipanteProjeto();
+            if (participantes != null)
+            {
+              
+                foreach (var prtp in participantes)
+                {
+                    
+                    participante.Comissao = prtp.Comissao;
+                    participante.Coordenador = prtp.Coordenador;
+                    participante.DiscenteId = prtp.DiscenteId;
+                    participante.DocenteId = prtp.DocenteId;
+                    participante.Id = prtp.Id;
+                    participante.ProjetoId = prtp.ProjetoId;
+                    participante.TipoParticipante = prtp.TipoParticipante;
+                    participante.Docente = prtp.Docente;
+                    participante.Discente = prtp.Discente;
+                }
+            }
+            return Request.CreateResponse(HttpStatusCode.OK, participante);
 
         }
 
@@ -104,9 +137,9 @@ namespace CadWeb.ApiIIS.Controllers
             }
         }
 
-        [Authorize()]
+        //[Authorize()]
         [HttpDelete]
-        [Route("participantesprojeto")]
+        [Route("participantesprojeto/{id:int}")]
         public HttpResponseMessage Delete(int id)
         {
             if (id <= 0)

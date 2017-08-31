@@ -25,14 +25,47 @@ namespace CadWeb.ApiIIS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        [Authorize()]
+        //[Authorize()]
         [Route("participantestarefa/{id:int}")]
         public HttpResponseMessage GetParticipanteTarefaById(int id)
         {
 
-            var results = db.ParticipantesTarefaProjeto.Where(x => x.Id == id);
+            //var results = db.ParticipantesTarefaProjeto.Where(x => x.Id == id);
 
-            return Request.CreateResponse(HttpStatusCode.OK, results);
+            var participantes = from prtp in db.ParticipantesTarefaProjeto
+                                where prtp.Id == id
+                                select new
+                                {
+
+                                    prtp.Discente,
+                                    prtp.DiscenteId,
+                                    prtp.Docente,
+                                    prtp.DocenteId,
+                                    prtp.Id,
+                                    prtp.TarefaProjetoId,
+                                    prtp.TipoParticipante
+                                };
+
+            ParticipanteTarefaProjeto participante = new ParticipanteTarefaProjeto();
+            if (participantes != null)
+            {
+
+                foreach (var prtp in participantes)
+                {
+
+
+                    participante.DiscenteId = prtp.DiscenteId;
+                    participante.DocenteId = prtp.DocenteId;
+                    participante.Id = prtp.Id;
+                    participante.TarefaProjetoId = prtp.TarefaProjetoId;
+                    participante.TipoParticipante = prtp.TipoParticipante;
+                    participante.Docente = prtp.Docente;
+                    participante.Discente = prtp.Discente;
+
+                }
+            }
+
+            return Request.CreateResponse(HttpStatusCode.OK, participante);
 
         }
 
@@ -78,7 +111,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         }
 
-        [Authorize()]
+        //[Authorize()]
         [HttpPut]
         [Route("participantestarefa")]
         public HttpResponseMessage PutParticipanteTarefa(ParticipanteTarefaProjeto participante)
@@ -106,7 +139,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         [Authorize()]
         [HttpDelete]
-        [Route("participantestarefa")]
+        [Route("participantestarefa/{id:int}")]
         public HttpResponseMessage Delete(int id)
         {
             if (id <= 0)

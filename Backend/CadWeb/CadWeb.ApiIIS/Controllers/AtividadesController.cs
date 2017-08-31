@@ -26,7 +26,7 @@ namespace CadWeb.ApiIIS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        [Authorize()]
+        //[Authorize()]
         [Route("atividades/{id:int}")]
         public HttpResponseMessage GetAtividadeById(int id)
         {
@@ -36,11 +36,37 @@ namespace CadWeb.ApiIIS.Controllers
             {
                 atividadeview.AtividadeProjeto = result;
             }
-            var participanteatividade = db.ParticipantesAtividadeProjeto.Where(x => x.AtividadeProjetoId == id).ToList();
-            if (participanteatividade.Count > 0)
+            var participantes = from prtf in db.ParticipantesAtividadeProjeto
+                                where prtf.AtividadeProjetoId == id
+                                select new
+                                {
+                                    prtf.DiscenteId,
+                                    prtf.Discente,
+                                    prtf.DocenteId,
+                                    prtf.Docente,
+                                    prtf.Id,
+                                    prtf.AtividadeProjetoId,
+                                    prtf.TipoParticipante
+                                };
+
+            if (participantes != null)
             {
-                atividadeview.ParticipantesAtividade = participanteatividade;
+                atividadeview.ParticipantesAtividade = new List<ParticipanteAtividadeProjeto>();
+                foreach (var prtp in participantes)
+                {
+                    ParticipanteAtividadeProjeto participante = new ParticipanteAtividadeProjeto();
+                    participante.Discente = prtp.Discente;
+                    participante.DiscenteId = prtp.DiscenteId;
+                    participante.Docente = prtp.Docente;
+                    participante.DocenteId = prtp.DocenteId;
+                    participante.Id = prtp.Id;
+                    participante.AtividadeProjetoId = prtp.AtividadeProjetoId;
+                    participante.TipoParticipante = prtp.TipoParticipante;
+
+                    atividadeview.ParticipantesAtividade.Add(participante);
+                }
             }
+
 
             return Request.CreateResponse(HttpStatusCode.OK, atividadeview);
 
@@ -77,7 +103,7 @@ namespace CadWeb.ApiIIS.Controllers
                 AtividadeProjeto atividade = atividadeview.AtividadeProjeto;
                 db.AtividadesProjeto.Add(atividade);
                 db.SaveChanges();
-                if (atividadeview.AtividadeProjeto != null)
+                if (atividadeview.ParticipantesAtividade != null)
                 {
                     foreach (ParticipanteAtividadeProjeto participante in atividadeview.ParticipantesAtividade)
                     {
@@ -105,17 +131,17 @@ namespace CadWeb.ApiIIS.Controllers
         [Authorize()]
         [HttpPut]
         [Route("atividades")]
-        public HttpResponseMessage PutAtividades(AtividadeProjeto atividadeview)
+        public HttpResponseMessage PutAtividades(AtividadeProjetoView atividadeview)
         {
-            if (atividadeview == null)
+            if (atividadeview.AtividadeProjeto == null)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest, "Não foi possível alterar a tarefa. Informações incompletas");
             }
 
             try
             {
-
-                db.Entry<AtividadeProjeto>(atividadeview).State = System.Data.Entity.EntityState.Modified;
+                AtividadeProjeto atividade = atividadeview.AtividadeProjeto;
+                db.Entry<AtividadeProjeto>(atividade).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                
                 var result = atividadeview;
@@ -131,7 +157,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         [Authorize()]
         [HttpDelete]
-        [Route("atividades")]
+        [Route("atividades/{id:int}")]
         public HttpResponseMessage Delete(int id)
         {
             if (id <= 0)
