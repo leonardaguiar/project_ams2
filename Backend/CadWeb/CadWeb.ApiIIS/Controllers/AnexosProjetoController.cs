@@ -40,7 +40,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         }
 
-
+        [Authorize()]
         [HttpPost]
         [Route("anexosprojeto")]
         public HttpResponseMessage PostAnexo(AnexoProjeto anexo)
@@ -62,7 +62,7 @@ namespace CadWeb.ApiIIS.Controllers
             }
 
         }
-
+        //[Authorize()]
         [HttpPost]
         [Route("anexosprojeto/anexo")]
         public Task<HttpResponseMessage> PostFormData()
@@ -88,12 +88,15 @@ namespace CadWeb.ApiIIS.Controllers
                     {
                         Request.CreateErrorResponse(HttpStatusCode.InternalServerError, t.Exception);
                     }
-
+                    //Nome real do arquivo
                     string nameFile = "";
+                    //caminho mais nome do arquivo salvo
                     string fileSaved = "";
+                    //url disponibilizada para o usuario 
                     string url = "";
+                    //localização do arquivo absoluto + o nome do arquivo real postado.
                     string caminhoTemp = "";
-                    // This illustrates how to get the file names.
+                    // Pega o caminho e o nome do arquivo criado, também pega o nome do arquivo postado
                     foreach (MultipartFileData file in provider.FileData)
                     {
                         Trace.WriteLine(file.Headers.ContentDisposition.FileName);
@@ -104,13 +107,13 @@ namespace CadWeb.ApiIIS.Controllers
                     }
 
                     //o nome do arquivo recebe 10 caracteres gerados aleatoriamente 
-                    nameFile = alfanumericoAleatorio(10) + nameFile.Trim('\\', '"');
+                    nameFile = alfanumericoAleatorio(10) + nameFile.Trim('\\', '"').Replace(" ", "_");
 
-                    //Renomeia o arquivo para que seja o mesmo postado 
+                    //Concatena o caminho com o nome real do arquivo
                     //caminho = Rename(fileSaved, nameFile.Trim(), caminho);
                     caminhoTemp = caminho + '\\' + nameFile.Trim('\\', '"');
                     try
-                    {
+                    {   //Renomeia o arquivo para que seja o mesmo postado 
                         File.Move(fileSaved, caminhoTemp);
                     }
                     catch {
@@ -192,6 +195,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         }
 
+        
         [HttpGet]
         [Route("anexosprojeto/anexo/{arquivo?}")]
         public HttpResponseMessage Test(string arquivo)

@@ -15,7 +15,7 @@ namespace CadWeb.ApiIIS.Controllers
     public class ParticipantesAtividadeController : ApiController
     {
         private CadWebDataContext db = new CadWebDataContext();
-        //[Authorize()]
+        [Authorize()]
         [Route("participantesatividade")]
         public HttpResponseMessage GetParticipantesAtividade()
         {
@@ -25,7 +25,7 @@ namespace CadWeb.ApiIIS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        //[Authorize()]
+        [Authorize()]
         [Route("participantesatividade/{id:int}")]
         public HttpResponseMessage GetParticipanteAtividadeById(int id)
         {
@@ -83,7 +83,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         //    return Request.CreateResponse(HttpStatusCode.OK, result);
         //}
-
+        [Authorize()]
         [HttpPost]
         [Route("participantesatividade")]
         public HttpResponseMessage PostParticipante(ParticipanteAtividadeProjeto participante)

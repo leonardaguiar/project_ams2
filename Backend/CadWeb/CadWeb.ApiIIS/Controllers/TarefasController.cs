@@ -16,7 +16,7 @@ namespace CadWeb.ApiIIS.Controllers
     {
         private CadWebDataContext db = new CadWebDataContext();
 
-        //[Authorize()]
+        [Authorize()]
         [Route("tarefas")]
         public HttpResponseMessage GetTarefas()
         {
@@ -25,7 +25,7 @@ namespace CadWeb.ApiIIS.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
-       // [Authorize()]
+        [Authorize()]
         [Route("tarefas/{id:int}")]
         public HttpResponseMessage GetTarefaById(int id)
         {
@@ -83,7 +83,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         //    return Request.CreateResponse(HttpStatusCode.OK, result);
         //}
-
+        [Authorize()]
         [HttpPost]
         [Route("tarefas")]
         public HttpResponseMessage PostTarefa(TarefaProjetoView tarefaview)

@@ -18,7 +18,7 @@ namespace CadWeb.ApiIIS.Controllers
     {
         private CadWebDataContext db = new CadWebDataContext();
 
-            //[Authorize()]
+            [Authorize()]
             [Route("usuarios")]
             public HttpResponseMessage GetUsuarios()
             {

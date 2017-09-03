@@ -66,7 +66,7 @@ namespace CadWeb.ApiIIS
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/v1/security/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromHours(2),
+                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new SimpleAuthorizationServerProvider()
             };
 

@@ -16,7 +16,7 @@ namespace CadWeb.ApiIIS.Controllers
     {
         private CadWebDataContext db = new CadWebDataContext();
 
-        //[Authorize()]
+        [Authorize()]
         [Route("atividades")]
         public HttpResponseMessage GetAtividades()
         {
@@ -26,7 +26,7 @@ namespace CadWeb.ApiIIS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
 
-        //[Authorize()]
+        [Authorize()]
         [Route("atividades/{id:int}")]
         public HttpResponseMessage GetAtividadeById(int id)
         {
@@ -86,7 +86,7 @@ namespace CadWeb.ApiIIS.Controllers
 
         //    return Request.CreateResponse(HttpStatusCode.OK, result);
         //}
-
+        [Authorize()]
         [HttpPost]
         [Route("atividades")]
         public HttpResponseMessage PostAtividade(AtividadeProjetoView atividadeview)

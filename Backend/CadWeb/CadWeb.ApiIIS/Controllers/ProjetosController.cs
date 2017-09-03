@@ -17,7 +17,7 @@ namespace CadWeb.ApiIIS.Controllers
     {
         private CadWebDataContext db = new CadWebDataContext();
         
-        //[Authorize()]
+        [Authorize()]
         [Route("projetos")]
         public HttpResponseMessage GetProjetos()
         {
@@ -26,7 +26,7 @@ namespace CadWeb.ApiIIS.Controllers
            
             return Request.CreateResponse(HttpStatusCode.OK, results);
         }
-        //[Authorize()]
+        [Authorize()]
         [Route("projetos/{id:int}")]
         public HttpResponseMessage GetProjetosById(int id)
         {
@@ -97,14 +97,43 @@ namespace CadWeb.ApiIIS.Controllers
                 }
             }
 
+            //Carrega Anexos
+            var anexos = from anx in db.AnexosProjeto
+                                where anx.ProjetoId == id
+                                select new
+                                {
+                                   
+                                    anx.Id,
+                                    anx.Data,
+                                    anx.Descricao,
+                                    anx.Link,
+                                    anx.ProjetoId
+
+                                };
+
+            if (anexos != null)
+            {
+                projetoview.AnexosProjeto = new List<AnexoProjeto>();
+                foreach (var anx in anexos) {
+                    AnexoProjeto anexo = new AnexoProjeto();
+                    anexo.ProjetoId = anx.ProjetoId;
+                    anexo.Link = anx.Link;
+                    anexo.Id = anx.Id;
+                    anexo.Descricao = anx.Descricao;
+                    anexo.Data = anx.Data;
+
+                    projetoview.AnexosProjeto.Add(anexo);
+                }
+            }
+
             //Carrega participantes
             //var participantesprojeto = db.ParticipantesProjeto.Where(x => x.ProjetoId == id).ToList();
             var participantes = from prtp in db.ParticipantesProjeto
                                 where prtp.ProjetoId == id
                                 select new
                                 {
-                                   
-                                    prtp.Comissao, 
+
+                                    prtp.Comissao,
                                     prtp.Coordenador,
                                     prtp.Discente,
                                     prtp.DiscenteId,
@@ -118,7 +147,8 @@ namespace CadWeb.ApiIIS.Controllers
             if (participantes != null)
             {
                 projetoview.ParticipantesProjeto = new List<ParticipanteProjeto>();
-                foreach (var prtp in participantes) {
+                foreach (var prtp in participantes)
+                {
                     ParticipanteProjeto participante = new ParticipanteProjeto();
                     participante.Comissao = prtp.Comissao;
                     participante.Coordenador = prtp.Coordenador;
@@ -133,6 +163,7 @@ namespace CadWeb.ApiIIS.Controllers
                     projetoview.ParticipantesProjeto.Add(participante);
                 }
             }
+
 
             //Carrega semestres
             //var semestres = db.SemestresProjeto.Where(x => x.ProjetoId == id).ToList();
@@ -160,6 +191,7 @@ namespace CadWeb.ApiIIS.Controllers
         //    return Request.CreateResponse(HttpStatusCode.OK, result);
         //}
 
+        [Authorize()]
         [HttpPost]
         [Route("projetos")]
         public HttpResponseMessage PostProjeto(ProjetoView projetoview)

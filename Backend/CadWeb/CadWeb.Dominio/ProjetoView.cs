@@ -15,5 +15,6 @@ namespace CadWeb.Dominio
         public List<ParticipanteProjeto> ParticipantesProjeto { get; set; }
         //public List<ParticipanteAtividadeProjeto> ParticipantesAtividade { get; set; }
         //public List<ParticipanteTarefaProjeto> ParticipantesTarefa { get; set; }
+        public List<AnexoProjeto> AnexosProjeto { get; set; }
     }
 }
